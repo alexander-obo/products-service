@@ -8,12 +8,8 @@ import java.util.*
 @Service
 class GCPProductsService(private val productRepository: ProductRepository) : ProductsService {
 
-    override fun getAll(): List<Product> {
-        return productRepository.findAll() as List<Product>
-    }
+    override fun getAll(): List<Product> = productRepository.findAll().toList()
 
-    override fun getById(id: Int): Optional<Product> {
-        return productRepository.findById(id)
-    }
+    override fun getById(id: Int): Optional<Product> = productRepository.findById(id)
 
 }
