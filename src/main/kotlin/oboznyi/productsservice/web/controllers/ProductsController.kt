@@ -24,4 +24,7 @@ class ProductsController(private val productsService: ProductsService) {
         throw ResponseStatusException(HttpStatus.NOT_FOUND, "Product with ID [$id] not found")
     }
 
+    @RequestMapping(method = [RequestMethod.POST])
+    fun addProduct(product: Product): Product = productsService.add(product)
+
 }

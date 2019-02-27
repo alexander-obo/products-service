@@ -12,4 +12,6 @@ class GCPProductsService(private val productRepository: ProductRepository) : Pro
 
     override fun getById(id: Int): Optional<Product> = productRepository.findById(id)
 
+    override fun add(product: Product) : Product = productRepository.save(product)
+
 }

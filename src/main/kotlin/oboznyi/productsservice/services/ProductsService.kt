@@ -9,4 +9,6 @@ interface ProductsService {
 
     fun getById(id: Int): Optional<Product>
 
+    fun add(product: Product): Product
+
 }
