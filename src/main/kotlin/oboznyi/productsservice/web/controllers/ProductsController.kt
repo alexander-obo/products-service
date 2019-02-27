@@ -27,4 +27,7 @@ class ProductsController(private val productsService: ProductsService) {
     @RequestMapping(method = [RequestMethod.POST])
     fun addProduct(product: Product): Product = productsService.add(product)
 
+    @RequestMapping(path = ["/{id}"], method = [RequestMethod.DELETE])
+    fun deleteProduct(@PathVariable("id") id: Int) = productsService.delete(id)
+
 }

@@ -14,4 +14,6 @@ class GCPProductsService(private val productRepository: ProductRepository) : Pro
 
     override fun add(product: Product) : Product = productRepository.save(product)
 
+    override fun delete(id: Int) = productRepository.deleteById(id)
+
 }
