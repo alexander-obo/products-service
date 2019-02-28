@@ -13,4 +13,6 @@ interface ProductsService {
 
     fun delete(id: Int)
 
+    fun update(id: Int, product: Product)
+
 }

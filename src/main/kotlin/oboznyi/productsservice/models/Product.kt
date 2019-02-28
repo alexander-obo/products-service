@@ -8,8 +8,8 @@ import javax.persistence.*
 class Product(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Int = 0,
-    var name: String = "",
-    var price: BigDecimal = BigDecimal.ZERO,
-    var count: Int = 0
+    val id: Int? = null,
+    var name: String? = null,
+    var price: BigDecimal? = null,
+    var count: Int? = null
 )

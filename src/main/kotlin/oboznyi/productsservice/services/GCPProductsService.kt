@@ -12,8 +12,18 @@ class GCPProductsService(private val productRepository: ProductRepository) : Pro
 
     override fun getById(id: Int): Optional<Product> = productRepository.findById(id)
 
-    override fun add(product: Product) : Product = productRepository.save(product)
+    override fun add(product: Product): Product = productRepository.save(product)
 
     override fun delete(id: Int) = productRepository.deleteById(id)
+
+    override fun update(id: Int, product: Product) {
+        val productFromRepo = productRepository.findById(id).get()
+        productFromRepo.let {
+            it.name = product.name ?: it.name
+            it.price = product.price ?: it.price
+            it.count = product.count ?: it.count
+        }
+        productRepository.save(productFromRepo)
+    }
 
 }

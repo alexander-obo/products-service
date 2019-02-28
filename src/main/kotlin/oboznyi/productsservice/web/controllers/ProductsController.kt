@@ -30,4 +30,7 @@ class ProductsController(private val productsService: ProductsService) {
     @RequestMapping(path = ["/{id}"], method = [RequestMethod.DELETE])
     fun deleteProduct(@PathVariable("id") id: Int) = productsService.delete(id)
 
+    @RequestMapping(path = ["/{id}"], method = [RequestMethod.PUT])
+    fun updateProductById(@PathVariable("id") id: Int, product: Product) = productsService.update(id, product)
+
 }
